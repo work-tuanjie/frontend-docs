@@ -62,7 +62,7 @@ module.exports = {
         link: '/guide/code-guide',
         icon: 'reco-document',
         items: [
-          { text: '编码规范', link: '/blogs/guide/code' },
+          { text: '编码规范', link: '/guide/code' },
         ],
       },
     ],
