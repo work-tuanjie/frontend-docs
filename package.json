@@ -1,0 +1,16 @@
+{
+  "name": "frontend-team-docs",
+  "version": "1.0.0",
+  "author": "whaoa",
+  "description": "frontend develop docs.",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^1.6.0",
+    "vuepress-theme-reco": "^1.5.7",
+    "vuepress-plugin-dynamic-title": "^1.0.0",
+    "vuepress-plugin-reading-progress": "^1.0.10"
+  }
+}
