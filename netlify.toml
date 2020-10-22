@@ -1,0 +1,12 @@
+[build]
+  # 资源目录
+  publish = "build/"
+
+  # 构建命令
+  command = "npm run build"
+
+[[redirects]]
+  # 重定向配置
+  from = "/frontend-docs/*"
+  to = "/:splat"
+  status = 302
