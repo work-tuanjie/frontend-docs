@@ -1,6 +1,7 @@
 module.exports = {
   title: 'frontend',
   description: 'frontend develop docs.',
+  base: '/frontend-docs/',
   dest: 'build',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' } ],
