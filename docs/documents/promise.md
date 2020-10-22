@@ -1,10 +1,9 @@
 ---
 title: 你看得懂的 Promise
-# date: 2020-10-18
-date: 2020-10-22
+date: 2020-10-18
 publish: true
 categories:
-  - 文档
+  - JavaScript
 tags:
   - JavaScript
   - Promise
@@ -33,7 +32,7 @@ tags:
 
 举个栗子🌰：
 
-```javascript
+``` javascript
 // 在 Node.js 中读取本地文件
 const fs = require('fs')
 
@@ -86,7 +85,7 @@ fs.readFile('./a.txt', 'utf8', function (err, data) {
 - `.catch()`: 在一个 `Promise` 被 `rejected` 后被调用, 接受 `Promise` 内部 `reject` 调用时所传递的参数作为参数
 - `.finally()`: 不论 `Promise` 是被 `resolved` 还是 `reject` 总是调用 (该方法会在 `then` 或者 `catch` 方法后调用)
 
-```javascript
+``` javascript
 function promiseDemo (state) {
   return new Promise((resolve, reject) => {
     state ? resolve(!!state) : reject(!!state)
@@ -122,7 +121,7 @@ promiseDemo(false)
 
 当你知道一个 `Promise` 总是 `resolve` 或者总是 `reject` 的时候，你可以写 `Promise.resolve` 或 `Promise.reject`，传入你想要 `reject` 或 `resolve` 的 `Promise` 的值。
 
-```javascript
+``` javascript
 new Promise(resolve => resolve(true))
   .then(res => { console.log(res) });
 // > true
@@ -155,7 +154,7 @@ Promise.reject(false)
 
 如果不使用 `Promise` 来实现的话，代码大概是这个样子：
 
-```javascript
+``` javascript
 getImage('./image.png', (error, data) => {
   if (error) throw new Error(error);
   compressImage(data，(error, _data) => {
@@ -173,7 +172,7 @@ getImage('./image.png', (error, data) => {
 
 在这个例子中，为了运行实现这个功能，我们不得不嵌套多个回调。如果使用 `Promise` 来实现则会清爽很多：
 
-```javascript
+``` javascript
 getImage('./image.png')
   .then(data => compressImage(data))
   .then(data => applyFilter(data))
@@ -204,7 +203,7 @@ getImage('./image.png')
 
 我们网站首页需要请求三个不同的接口，而且这三个接口之间不存在相互的依赖关系，但我们需要在三个接口都成功响应后再去做操作，这是就可以使用 `Promise.all` 来实现。
 
-```javascript
+``` javascript
 Promise.all([getBanner(), getHot(), getList()])
   // 当三个Promise方法都返回成功时，会调用 then 方法，把三个方法的返回值按传入的数组顺序当作参数传入。
   .then(([banner, hot, list]) => {
@@ -228,7 +227,7 @@ Promise.all([getBanner(), getHot(), getList()])
 
 `fetch api` 不像 `XMLHttpRequest` 支持 `timeout`，我们可以通过 `race` 方法来实现该功能。
 
-```javascript
+``` javascript
 Promise.race([
   fetch('https://api.xxxx.com/v1/xxx'),
   // 当 fetch 5s 内没有响应时，直接返回失败状态的 Promise
@@ -248,7 +247,7 @@ Promise.race([
 
 当参数数组中的 `Promise` 全部返回时（不管元素的结果时成功还是失败）会返回一个状态为 `Fulfilled` 的 `Promise`。
 
-```javascript
+``` javascript
 Promise.allSettled([getBanner(), getHot(), getList()])
   // 当所有 Promise 都返回时，会把每个 Promise 的执行结果按照数参数组顺序组成数组传入 then 方法做为参数
   // 该参数中的每一项都是一个对象，且对象中都有一个 status 字段
@@ -271,7 +270,7 @@ Promise.allSettled([getBanner(), getHot(), getList()])
 
 当我们需要获取天气信息数据时，处于白嫖即赚到的精神，一般会有多个免费接口可以实现，但这些接口一般都会对单个账号进行免费次数限制，这时我们需要请求多个接口来处理这个限制问题。
 
-```javascript
+``` javascript
 Promise.any([juhe(), amap(), caiyun()])
   .then(res => {
     console.log(res);
@@ -288,7 +287,7 @@ Promise.any([juhe(), amap(), caiyun()])
 
 语法：
 
-```javascript
+``` javascript
 [返回值] = await 表达式;
 ```
 
@@ -302,7 +301,7 @@ Promise.any([juhe(), amap(), caiyun()])
 
 `async function` 执行过程中如果遇到 `await` 会暂停整个 `async` 函数的执行，等待 `await` 后面的表达式的执行结果，只有被等待的表达式返回数据后才会恢复 `async` 函数的执行。
 
-```javascript
+``` javascript
 async function foo() {
   await 1
 }
@@ -314,7 +313,7 @@ function foo() {
 
 `async function` 会始终返回一个 `Promise` 对象。如果 `async function` 中的返回值不是一个 `Promise` 类型的值，则 `async function` 会隐式的将值转为 `Promise` 对象进行返回。如果在 `async function` 执行过程中出现了异常，则 `asycn function` 会自动捕获异常，并终止函数执行，将异常通过一个失败的 `Promise` 返回给调用者。
 
-```javascript
+``` javascript
 async function foo() {
   return 1;
 }
@@ -330,7 +329,7 @@ function foo() {
 
 > 即 `async function` 返回一个 Promise 和 返回一个 await Promise 有什么区别？
 
-```javascript{9,11}
+``` javascript{9,11}
 async function getProcessedData(url) {
   let v;
   try {
