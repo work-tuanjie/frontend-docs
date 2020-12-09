@@ -325,11 +325,11 @@ function foo() {
 
 ## 测试
 
-以下代码的返回值在 **第9行** 与 **第11行** 有什么区别？
+以下代码的返回值在 **第10行** 与 **第13行** 有什么区别？
 
 > 即 `async function` 返回一个 Promise 和 返回一个 await Promise 有什么区别？
 
-``` javascript{9,11}
+``` javascript{10,13}
 async function getProcessedData(url) {
   let v;
   try {
