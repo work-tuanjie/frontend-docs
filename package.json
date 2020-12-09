@@ -9,8 +9,9 @@
   },
   "devDependencies": {
     "vuepress": "^1.6.0",
-    "vuepress-theme-reco": "^1.5.7",
+    "vuepress-plugin-cursor-effects": "^1.0.0",
     "vuepress-plugin-dynamic-title": "^1.0.0",
-    "vuepress-plugin-reading-progress": "^1.0.10"
+    "vuepress-plugin-reading-progress": "^1.0.10",
+    "vuepress-theme-reco": "^1.5.7"
   }
 }

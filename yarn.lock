@@ -8234,6 +8234,11 @@ vuepress-plugin-container@^2.0.2:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
 
+vuepress-plugin-cursor-effects@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-cursor-effects/download/vuepress-plugin-cursor-effects-1.0.0.tgz#47bf74b4fe9fae923b2250ac18d15f5b3fddb6b7"
+  integrity sha1-R790tP6frpI7IlCsGNFfWz/dtrc=
+
 vuepress-plugin-disqus@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npm.taobao.org/vuepress-plugin-disqus/download/vuepress-plugin-disqus-0.2.0.tgz#0a5bde424f81e0185eda36fba23d7ac4cae6ff07"

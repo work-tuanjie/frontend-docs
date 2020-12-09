@@ -58,19 +58,21 @@ module.exports = {
     nav: [
       { text: '首页', link: '/', icon: 'reco-home' },
       { text: '时间线', link: '/timeline/', icon: 'reco-date' },
-      {
-        text: '文档',
-        link: '/guide/code-guide',
-        icon: 'reco-document',
-        items: [
-          { text: '编码规范', link: '/guide/code' },
-        ],
-      },
+      // {
+      //   text: '文档',
+      //   icon: 'reco-document',
+      //   items: [
+      //     { text: '编码规范', link: '/guide/code' },
+      //   ],
+      // },
+      // {
+      //   text: '项目归纳',
+      //   icon: 'reco-document',
+      //   items: [
+      //     { text: 'ZhaofangA+', link: '/projects/saas/' },
+      //   ],
+      // },
     ],
-
-    // sidebar: {
-    //   '/docs/theme-reco/': ['', 'theme', 'plugin', 'api'],
-    // },
   },
   markdown: {
     // 代码块显示行号
@@ -79,6 +81,7 @@ module.exports = {
   plugins: [
     '@vuepress/nprogress',
     'reading-progress',
+    'cursor-effects',
     ['dynamic-title', { hideText: '(●—●)喔哟，崩溃啦！' }],
   ],
 };
